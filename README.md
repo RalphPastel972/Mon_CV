@@ -8,3 +8,6 @@ Basically, it's just a sandbox to learn.
 My code is dirty and amateur, don't hesitate
 
 I am also learning how to use git
+
+//Mes changements sont dans quelle branche du coup?
+Je ne sais pas 
