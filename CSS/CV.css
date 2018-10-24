@@ -1,0 +1,352 @@
+
+
+/* IDEA: Paramétrages principaux : @font-face, background, réinitialisation des marges, polices principales */
+
+@font-face { /* Définition d'une nouvelle police nommée roboto */
+    font-family: 'roboto';
+    src: url('../polices/roboto/Roboto-Regular.ttf') format('truetype');
+}
+
+* { /* Réinitialisation des marges. On change le défaut du navigateur, aka User Agent pour faciliter la construction du CSS */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  background-size: auto;
+  font-family: 'roboto'; /* Utilisation de la police qu'on vient de définir plus haut */
+}
+
+
+
+/* IDEA: GEstion des liens (leur couleur, pas souligné, etc.)*/
+a:link {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* IDEA: Paramétrage des images */
+.photo_profil {
+  height: 150px;
+  }
+
+.cloud_skills {
+  max-height: 160px;
+}
+
+/* IDEA: Dimentionnement Page CV */
+
+body {
+  background-color: #EFEFE7;
+}
+
+#feuille_A4 {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: white;
+  box-shadow: -12px -10px 4px 3px lightgray;
+}
+
+.colonne_gauche {
+  min-width: 193px;
+}
+
+.colonne_droite {
+  min-width: 480px;
+}
+
+
+/* IDEA: Borders et positionnements */
+
+.en-tete {
+  border: 0px solid ;
+  border-bottom-width:4px;
+  border-bottom-color: red;
+}
+
+.tronc_cv {
+  margin-top: 15px;
+}
+
+.colonne_gauche ul {
+border-left: 1px dotted #3F6A7C;
+margin: 0;
+padding-left: 23px;
+padding-top: 13px;
+padding-bottom: 9px;
+list-style-type: none;
+}
+
+.list_work_experience, .list_technical_skill, .list_personal_interests {
+border-left: 1px dotted #3F6A7C;
+margin: 0;
+padding-left: 23px;
+padding-top: 13px;
+padding-right: 0px;
+list-style-type: none;
+}
+
+.Technical_Skills_gauche {
+  padding-right: 23px;
+}
+
+.Technical_Skills_droite {
+border-left: 1px dotted #3F6A7C;
+margin: 0;
+padding-left: 23px;
+padding-top: 0px;
+padding-right: 0px;
+list-style-type: none;
+}
+
+.colonne_gauche {
+  margin-right: 20px;
+}
+
+.Languages, .Personal_Skills, .Certifications {
+  margin-bottom: 30px;
+}
+
+.titre_experience_pro {
+  border-top: 15px;
+}
+
+.Skills {
+  padding-top: 25px;
+}
+
+.Personal_Interests {
+  padding-top: 25px;
+}
+
+
+/* IDEA: On gère les puces incrustées */
+
+li.diplome, li.certif {
+  position: relative; /* C'est nécessaire pour que les puces du niveau d'en dessous fontionnent (cf ci dessous) */
+}
+.Education .diplome::before, .Certifications .certif::before { /* liste des 2 blocs qui prennent mes puces spéciales incrustées dans la bordure, dans la colonne_gauche */
+  content: '';
+  position: absolute;
+  height: 5px;
+  width: 5px;
+  background: #fff;
+  border-radius: 8px;
+  left: -28px;
+  margin-top: 7px;
+  border: 2px solid #3F6A7C;
+}
+
+.list_work_experience, .Personal_Interests {
+  position: relative; /* C'est nécessaire pour que les puces du niveau d'en dessous fontionnent */
+}
+.work_experience .titre_experience_pro::before , .Personal_Interests .titre_interet_perso::before { /* Je sépare les 2 blocs qui prennent mes puces spéciales incrustées dans la bordure */
+  content: '';
+  position: absolute;
+  height: 5px;
+  width: 5px;
+  background: #fff;
+  border-radius: 8px;
+  left: -4px;
+  margin-top: 7px;
+  border: 2px solid #3F6A7C;
+}
+
+/* IDEA: On fait du flex */
+
+body {
+  display: flex;
+  flex-direction: column;
+  flex-basis: auto;
+}
+
+.en-tete {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-grow: 2
+}
+
+.tronc_cv {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.list_technical_skill {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+
+
+/* IDEA: Gestion des icones */
+
+/* Ici je choisis et positionne mes icones Google */
+.icon_portable::before {
+  content: "phone_android";
+}
+.icon_email::before {
+  content: "mail";
+}
+.icon_adresse::before {
+  content: "home";
+}
+.icon_linkedin::before {
+  content: "share";
+}
+.icon_date_naissance::before {
+  content: "cake";
+}
+
+.icon_languages::before {
+    content: "translate";
+}
+
+.icon_personal_skills::before {
+  content: "fitness_center";
+}
+
+.icon_education::before {
+  content: "school";
+}
+
+.icon_work_experience::before {
+  content: "work_outline";
+}
+
+.icon_technical_skill::before {
+  content: "build";
+}
+
+.icon_personal_interests::before {
+  content: "favorite_border";
+}
+
+
+/* Et ici, je style mes idées en factorisant toutes les icones similaires*/
+
+/* Header */
+.icon_portable, .icon_email, .icon_adresse, .icon_linkedin, .icon_date_naissance {
+  font-family: 'Material Icons';
+  font-size:0.9em;
+  margin-right: 10px;
+  color: #a1a1a1;
+}
+
+/* Colonne de Gauche  */
+.icon_languages, .icon_personal_skills, .icon_education, .icon_work_experience {
+  font-family: 'Material Icons';
+  font-size:22px;
+  margin: 0px 10px -0px -8px;
+}
+
+.icon_work_experience, .icon_technical_skill, .icon_personal_interests {
+  font-family: 'Material Icons';
+  font-size:22px;
+  margin: 0px 10px 0 -11px;
+}
+
+.icon_languages, .icon_personal_skills, .icon_education, .titre_colonne_gauche {
+  color:#3F6A7C;
+}
+
+/* Colonne de Droite  */
+.icon_work_experience, .titre_colonne_droite, .icon_technical_skill, .icon_personal_interests {
+  color: #3F6A7C;
+}
+
+/* Titres associés aux icones ci-dessus */
+
+.titre_colonne_gauche {
+  font-family: 'roboto';
+  font-size:1.2em;
+}
+
+.titre_colonne_droite {
+  font-family: 'roboto';
+  font-size:1.3em;
+}
+
+
+/* Polices diverses */
+
+#prenom_nom {
+  font-size: 2.5em;
+  letter-spacing: 2px;
+  word-spacing: 4px;
+  color: #62b2c7
+}
+
+.profession {
+  font-size: 1.4em;
+}
+
+.coordonees {
+  font-size: 0.85em;
+  font-family: serif;
+  line-height: 1.5;
+  color: #a1a1a1;
+}
+
+.colonne_gauche li {
+  font-size:0.9em;
+  line-height: 1.7;
+}
+
+.titre_experience_pro {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.lieu_experience_pro {
+  font-size: 0.9em;
+  font-style: italic;
+  color: #656d6c;
+}
+
+.entreprise_experience_pro {
+  font-size: 1em;
+  color: #0b1a72
+}
+
+.date_experience_pro {
+  padding-left: 10px;
+  font-size: 0.8em;
+  font-style: oblique;
+  color: #656d6c;
+}
+
+.resume_experience_pro {
+  list-style: none;
+  margin-top: 0px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  padding-left: 15px;
+  font-size: 0.9em;
+}
+
+.Technical_Skills_gauche {
+  font-size:0.9em;
+  line-height: 1.7;
+}
+
+.Technical_Skills_droite p {
+  margin: 0px;
+  font-size: 1em;
+  color: #3F6A7C;
+}
+
+.titre_interet_perso {
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+.description_interet_perso {
+  font-size: 0.85em;
+}
