@@ -2,10 +2,8 @@
 
 /* IDEA: Paramétrages principaux : @font-face, background, réinitialisation des marges, polices principales */
 
-@font-face { /* Définition d'une nouvelle police nommée roboto */
-    font-family: 'roboto';
-    src: url('../polices/roboto/Roboto-Regular.ttf') format('truetype');
-}
+/* J'ajoute les fonts Google dont je vais me servir. Le lien vers le serveur Google est dans le fichier HTML */
+font-family: 'Roboto', sans-serif;
 
 * { /* Réinitialisation des marges. On change le défaut du navigateur, aka User Agent pour faciliter la construction du CSS */
     margin: 0;
