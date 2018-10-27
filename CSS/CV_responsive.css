@@ -17,7 +17,7 @@ body {
 
 
 
-/* IDEA: GEstion des liens (leur couleur, pas souligné, etc.)*/
+/* IDEA: Gestion des liens (leur couleur, pas souligné, etc.)*/
 a:link {
   color: inherit;
   text-decoration: none;
@@ -29,6 +29,12 @@ a:link {
   height: 150px;
   }
 
+  @media (max-width: 600px) {
+    .photo_profil {
+      max-height: 170px;
+      }
+  }
+
 .cloud_skills {
   max-height: 160px;
 }
@@ -38,6 +44,15 @@ a:link {
 body {
   background-color: #EFEFE7;
 }
+  @media (max-width: 600px) {
+    body {
+      background-color: inherit;
+      margin-left: 12px;
+      margin-top: 0;
+      margin-right: 5px;
+      margin-bottom: 0;
+    }
+  }
 
 #feuille_A4 {
   max-width: 940px;
@@ -48,6 +63,15 @@ body {
   background-color: white;
   box-shadow: -12px -10px 4px 3px lightgray;
 }
+@media (max-width: 600px) {
+  #feuille_A4 {
+    max-width: 940px;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    box-shadow: 0px 0px lightgray;
+  }
+}
 
 .colonne_gauche {
   min-width: 193px;
@@ -55,6 +79,12 @@ body {
 
 .colonne_droite {
   min-width: 480px;
+}
+
+@media (max-width: 600px) {
+  .colonne_droite {
+    min-width: 280px;
+  }
 }
 
 
@@ -100,6 +130,11 @@ padding-top: 0px;
 padding-right: 0px;
 list-style-type: none;
 }
+  @media (max-width: 600px) { /* Je n'affiche pas le nuage de mots en mode smartphone */
+    .Technical_Skills_droite {
+    display: none;
+    }
+  }
 
 .colonne_gauche {
   margin-right: 20px;
@@ -164,14 +199,53 @@ body {
 
 .en-tete {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: start;
   justify-content: space-between;
-  flex-grow: 2
+  align-content: center;
+}
+
+.nom_et_profession {
+  display: flex;
+  flex-direction: row;
+}
+
+
+/* Responsive pour les coordonnées de l'entête */
+@media (max-width: 600px) {
+  .en-tete {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+  .coordonees {
+    display: none; /* Ne pas afficher les coordonnées détaillées ici car c'est moche comme tout! Il faut que je trouve une solution pérenne pour afficher ces coordonnées en mode "mobile" */
+  }
 }
 
 .tronc_cv {
   display: flex;
   flex-wrap: nowrap;
+}
+
+@media (max-width: 600px) {
+  .tronc_cv {
+    display: flex;
+    flex-direction: column-reverse; /* Je choisis d'afficher d'abord la colonne de Droite (Selected Work experience) lorsque je suis en mode smartphone */
+    flex-wrap: nowrap;
+  }
+}
+
+@media (max-width: 600px) {
+  .colonne_gauche {
+    display: flex;
+    flex-wrap: wrap; /* Je wrap le contenu de la colonne de gauche */
+    align-items: start;
+    align-content: center;
+    justify-content: space-between;
+    margin-top: 23px;
+  }
 }
 
 .list_technical_skill {
@@ -180,7 +254,6 @@ body {
   flex-wrap: nowrap;
   justify-content: space-between;
 }
-
 
 
 /* IDEA: Gestion des icones */
@@ -201,31 +274,24 @@ body {
 .icon_date_naissance::before {
   content: "cake";
 }
-
 .icon_languages::before {
     content: "translate";
 }
-
 .icon_personal_skills::before {
   content: "fitness_center";
 }
-
 .icon_education::before {
   content: "school";
 }
-
 .icon_work_experience::before {
   content: "work_outline";
 }
-
 .icon_technical_skill::before {
   content: "build";
 }
-
 .icon_personal_interests::before {
   content: "favorite_border";
 }
-
 
 /* Et ici, je style mes idées en factorisant toutes les icones similaires*/
 
@@ -235,6 +301,15 @@ body {
   font-size:0.9em;
   margin-right: 10px;
   color: #a1a1a1;
+}
+
+@media (max-width: 600px) {
+  .icon_portable, .icon_email, .icon_adresse, .icon_linkedin, .icon_date_naissance {
+    font-family: 'Material Icons';
+    font-size:0.9em;
+    margin-right: 3px;
+    color: #a1a1a1;
+  }
 }
 
 /* Colonne de Gauche  */
