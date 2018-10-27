@@ -1,5 +1,3 @@
-
-
 /* IDEA: Paramétrages principaux : @font-face, background, réinitialisation des marges, polices principales */
 
 /* J'ajoute les fonts Google dont je vais me servir. Le lien vers le serveur Google est dans le fichier HTML */
@@ -16,7 +14,6 @@ body {
 }
 
 
-
 /* IDEA: Gestion des liens (leur couleur, pas souligné, etc.)*/
 a:link {
   color: inherit;
@@ -31,7 +28,7 @@ a:link {
 
   @media (max-width: 600px) {
     .photo_profil {
-      max-height: 170px;
+      height: auto;
       }
   }
 
@@ -346,11 +343,10 @@ body {
   font-size:1.3em;
 }
 
-
 /* Polices diverses */
 
 #prenom_nom {
-  font-size: 2.5em;
+  font-size: 2.7em;
   letter-spacing: 2px;
   word-spacing: 4px;
   color: #62b2c7
@@ -376,6 +372,12 @@ body {
   font-size: 1em;
   font-weight: bold;
 }
+  @media (max-width: 600px) {
+    .titre_experience_pro {
+      font-size: 1em;
+      font-weight: normal;
+    }
+  }
 
 .lieu_experience_pro {
   font-size: 0.9em;
