@@ -7,7 +7,8 @@ Basically, it's just a sandbox to learn.
 
 My code is dirty and amateur, don't hesitate to give me advice or to correct anything I do wrong.
 
-I am also learning how to use git and github.
+You can have a quick demo here: http://ryfe.fr/Mon_CV/CV.html
+(Please try it on smartphone, tablet and desktop computer to see the responsive magic. And on desktop, change the width of the browser window ;-) )
 
 
 Ok, let's get started
