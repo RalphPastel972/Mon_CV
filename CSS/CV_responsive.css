@@ -1,4 +1,5 @@
-/* IDEA: Paramétrages principaux : @font-face, background, réinitialisation des marges, polices principales */
+/* Paramétrages principaux : @font-family pour les Polices et les @media queries pour la partie responsive.
+Ce fichier CSS est associé à CV.html situé dans le répertoire supérieur */
 
 /* J'ajoute les fonts Google dont je vais me servir. Le lien vers le serveur Google est dans le fichier HTML */
 font-family: 'Roboto', sans-serif;
