@@ -400,11 +400,13 @@ body {
 
 .resume_experience_pro {
   list-style: none;
+  line-height: 1.2;
   margin-top: 0px;
   margin-left: 10px;
   margin-bottom: 5px;
   padding-left: 15px;
   font-size: 0.9em;
+  text-align: justify;
 }
 
 .Technical_Skills_gauche {
