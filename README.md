@@ -8,7 +8,7 @@ Basically, it's just a sandbox to learn.
 My code is dirty and amateur, don't hesitate to give me advice or to correct anything I do wrong.
 
 ## Demo
-You can have a quick demo here: http://ryfe.fr/Mon_CV/CV.html
+You can have a quick demo here: xxxxxxx
 (Please try it on smartphone, tablet and desktop computer to see the responsive magic. And on desktop, change the width of the browser window ;-) )
 
 
